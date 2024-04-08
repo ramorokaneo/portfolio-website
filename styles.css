@@ -1,0 +1,271 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    background-color: aquamarine;
+}
+.container .hero{
+    position: relative;
+    z-index: 10;
+    height: 85vh;
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border: 3px solid aqua;
+    border-radius: 20px;
+    box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.15);
+    padding: 0 40px 0 80px;
+}
+.hero nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+}
+.hero nav .logo{
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+}
+.hero nav .nav-links a{
+    color: aquamarine;
+    margin-left: 40px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+.hero nav .nav-links a:hover,
+.hero nav .nav-links a.active{
+    color: aqua;
+}
+.hero .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hero .content .div-text{
+    width: 40%;
+}
+.hero .content .div-text h1{
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: aliceblue;
+}
+.hero .content .div-text h4{
+    color: azure;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.hero .content .div-text p{
+    color: green;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+.hero .content .div-text .btn{
+    padding: 15px 20px;
+    background-color: aqua;
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.soc-link{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+.soc-link a i{
+    font-size: 25px;
+    cursor: pointer;
+    color: aqua;
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+.soc-link a i:hover{
+    color: aquamarine;
+}
+.hero .content .div-text .btn:hover{
+    color: aqua;
+    transition: 0.3s;
+    background-color: transparent;
+}
+.hero .content .div-img{
+    width: 40%;
+    padding-right: 40px;
+}
+.hero .content .div-img img{
+    width: 100%;
+}
+
+/* animation */
+.hero .logo,
+.hero .content .div-text h1,
+.hero .content .div-text h4,
+.hero .content .div-text .btn{
+    position: relative;
+    top: 50px;
+    animation: slide-top .5s linear forwards;
+    opacity: 0;
+}
+.hero .logo{
+    animation-delay: 0.2s;
+}
+.hero .content .div-text h1{
+    animation-delay: 0.5s; 
+}
+.hero .content .div-text h4{
+    animation-delay: 0.9s;
+}
+.hero .content .div-text .btn{
+    animation-delay: 1.8s;
+}
+@keyframes slide-top{
+    0%{
+        top: 50%;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.hero .content .div-text p{
+    position: relative;
+    left: 100px;
+    animation: slide-right .5s linear forwards;
+    animation-delay: 1.3s;
+    opacity: 0;
+}
+@keyframes slide-right{
+    0%{
+        left: 100%;
+        opacity: 0;
+    }
+    100%{
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.hero .content .div-img img{
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fade-img .5s linear forwards;
+    animation-delay: 2.1s;
+}
+@keyframes fade-img{
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Contact Form Styling */
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 150px; /* Adjust height as needed */
+}
+
+.contact-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: aqua;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #00bcd4;
+}
+
+/* Skills Styling */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    width: 100%; 
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.skill h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.skill p {
+    font-size: 16px;
+}
+
+.skill i {
+    margin-right: 5px;
+}
